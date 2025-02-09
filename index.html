@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #ffcccc;
+            text-align: center;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #ff69b4;
+            color: white;
+        }
+        .no {
+            background-color: #ffffff;
+            color: black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1> dear smol eyes, would you be my valentine? </h1>
+    <div class="buttons">
+        <button class="yes" onclick="window.location.href='yes.html'">yes</button>
+        <button class="no" onmouseover="moveButton()">no</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            let button = document.querySelector('.no');
+            let x = Math.random() * (window.innerWidth - button.offsetWidth);
+            let y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
